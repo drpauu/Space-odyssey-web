@@ -1,0 +1,10 @@
+body {
+    background-color: #FFB26B; /* Color de fondo (naranja claro) */
+    color: #803D13; /* Color de texto (marrón oscuro) */
+}
+
+h1 {
+    text-align: center;
+    font-size: 48px;
+    color: #803D13; /* Color del título (marrón oscuro) */
+}
