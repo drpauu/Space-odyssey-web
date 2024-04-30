@@ -1,0 +1,10 @@
+Link paleta de colors: https://colorhunt.co/palette/401f71824d74be7b72fdaf7b 
+
+Llista de funcions
+    1. Info de planetes.
+        1.1. Sistema solar
+        1.2. PLanetes divertits
+        1.3. Planetes descoberts últimament
+    Script de benvinguda
+
+Llista de planetes
