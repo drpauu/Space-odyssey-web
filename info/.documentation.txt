@@ -1,0 +1,27 @@
+Link paleta de colors: https://colorhunt.co/palette/401f71824d74be7b72fdaf7b 
+
+fondos:
+    https://videos.pexels.com/video-files/5818973/5818973-uhd_3840_2160_24fps.mp4
+    https://videos.pexels.com/video-files/15289793/15289793-hd_1920_1080_60fps.mp4
+    
+
+Llista de funcions
+    1. Info de planetes.
+        1.1. Sistema solar
+        1.2. PLanetes divertits
+        1.3. Planetes descoberts últimament
+    Script de benvinguda
+        apareix el missatge 
+        desapareix el missatge
+        apareixen el botons
+            planetarium
+                solar system
+            space rocks
+            coses de cohets
+            esdeveniments que pasen a l espai
+            jocs?
+            mapa interactiu?
+            efectes 3D?
+
+Llista de planetes:
+    [...]

@@ -1,14 +1,82 @@
-/* General Background */
+/* General Background 
 body {
-    background-color: #77B0AA; /* Deep Purple */
-    color: #E3FEF7; /* White text for contrast */
+    background-color: #77B0AA; /* Deep Purple 
+    color: #E3FEF7; /* White text for contrast 
+}*/
+body{
+  margin:0;
+  padding:0;
+  font-family:sans-serif;
+  background:#000;
+  overflow:hidden;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  background: #000;
+  overflow: hidden;
+}
+
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: perspective(500px) translate(-50%, -50%);
+  transform: skewY(15deg);
+  transition: 0.5s;
+}
+
+.center:hover {
+  transform: perspective(500px) translate(-50%, -50%);
+  transform: skewY(0deg);
+}
+
+.center h1 span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate(-50%, -50%);
+  margin: 0;
+  padding: 0;
+  text-transform: uppercase;
+  font-size: 2.4em; /* 12em / 5 */
+  color: #fff;
+  transform-style: preserve-3d;
+  transition: 0.8s;
+}
+
+.center h1 span:nth-child(1) {
+  clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%);
+}
+
+.center h1 span:nth-child(2) {
+  color: #5e17eb;
+  transform: translate(-50%, -50%) skewX(-60deg);
+  left: -7.6px; /* -38px / 5 */
+  clip-path: polygon(0 45%, 100% 45%, 100% 55%, 0 55%);
+}
+
+.center h1 span:nth-child(3) {
+  transform: translate(-50%, -50%) skewY(0deg);
+  left: -15.2px; /* -76px / 5 */
+  clip-path: polygon(0 55%, 100% 55%, 100% 100%, 0 100%);
+}
+
+.center:hover h1 span:nth-child(2), 
+.center:hover h1 span:nth-child(3) {
+  transform: translate(-50%, -50%) skewX(0deg);
+  left: 0;
+  color: #fff;
 }
 
 /* Header Styling */
 h1 {
     background-color: none; /* Dark Purple */
-    color: #003C43; /* Light Peach text for contrast */
+    color: #77B0AA; /* Light Peach text for contrast */
 }
+
 
 .planetarium-button {
     background-color: #003C43; /* Color azul definido */
@@ -36,64 +104,149 @@ h1 {
 
 /* Link Styling */
 a {
-    color: #003C43; /* Light Peach */
+    color: #fa9066; /* Light Peach */
     text-decoration: none; /* Optional: removes underline */
 }
 
 a:hover {
-    color: #003C43; /* Darker shade when hovering over links */
-}
-
-button {
-    border: none;
-    display: block;
-    position: relative;
-    padding: 0.7em 2.4em;
-    font-size: 18px;
-    background: transparent;
-    cursor: pointer;
-    overflow: hidden;
-    color: #003C43;
-    z-index: 1;
-    font-family: inherit;
-    font-weight: 500;
+    color: #fa9066; /* Darker shade when hovering over links */
 }
   
-button span {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background: transparent;
-    z-index: -1;
-    border: 4px solid #003C43;
+.svg-frame {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  transform-style: preserve-3d;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: scale(0.2);
 }
 
-button span::before {
-    content: "";
-    display: block;
-    position: absolute;
-    width: 8%;
-    height: 500%;
-    background: var(--lightgray);
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) rotate(-60deg);
-    transition: all 0.3s;
+.svg-frame svg {
+  position: absolute;
+  transition: .5s;
+  z-index: calc(1 - (0.2 * var(--j)));
+  transform-origin: center;
+  width: 344px;
+  height: 344px;
+  fill: none;
 }
 
-button:hover span::before {
-    transform: translate(-50%, -50%) rotate(-90deg);
-    width: 100%;
-    background: #77B0AA;
+.svg-frame:hover svg {
+  transform: rotate(-80deg) skew(30deg) translateX(calc(45px * var(--i))) translateY(calc(-35px * var(--i)));
 }
 
-button:hover {
-    color: white;
+.svg-frame svg #center {
+  transition: .5s;
+  transform-origin: center;
 }
 
-button:active span::before {
-    background: #77B0AA;
+.svg-frame:hover svg #center {
+  transform: rotate(-30deg) translateX(45px) translateY(-3px);
 }
-  
+
+#out2 {
+  animation: rotate16 7s ease-in-out infinite alternate;
+  transform-origin: center;
+}
+
+#out3 {
+  animation: rotate16 3s ease-in-out infinite alternate;
+  transform-origin: center;
+  stroke: #003C43;
+}
+
+#inner3,
+#inner1 {
+  animation: rotate16 4s ease-in-out infinite alternate;
+  transform-origin: center;
+}
+
+#center1 {
+  fill: #003C43;
+  animation: rotate16 2s ease-in-out infinite alternate;
+  transform-origin: center;
+}
+
+@keyframes rotate16 {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.card {
+  width: 190px;
+  height: 254px;
+  transition: all 0.2s;
+  position: relative;
+  cursor: pointer;
+}
+
+.card-inner {
+  width: inherit;
+  height: inherit;
+  background: rgba(113, 6, 128, 0.05);
+  box-shadow: 0 0 10px rgba(0,0,0,0.25);
+  backdrop-filter: blur(10px);
+  border-radius: 8px;
+}
+
+.card:hover {
+  transform: scale(1.04) rotate(1deg);
+}
+
+.circle {
+  width: 100px;
+  height: 100px;
+  background: radial-gradient(#430025, #430025);
+  border-radius: 50%;
+  position: absolute;
+  animation: move-up6 2s ease-in infinite alternate-reverse;
+}
+
+.circle:nth-child(1) {
+  top: -25px;
+  left: -25px;
+}
+
+.circle:nth-child(2) {
+  bottom: -25px;
+  right: -25px;
+  animation-name: move-down1;
+}
+
+@keyframes move-up6 {
+  to {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes move-down1 {
+  to {
+    transform: translateY(10px);
+  }
+}
+
+/* Stars Background */
+.video-background {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -1; /* Keep the video under other content */
+  overflow: hidden;
+}
+
+.video-background video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100vw; /* Cover the viewport */
+  height: 100vh; /* Adjust if you want it to cover more than 100% of the viewport */
+  object-fit: cover; /* Preserve aspect ratio while filling the element's dimensions */
+}
+
