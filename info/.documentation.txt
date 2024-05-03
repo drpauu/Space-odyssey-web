@@ -1,8 +1,6 @@
 Link paleta de colors: https://colorhunt.co/palette/401f71824d74be7b72fdaf7b 
 
-fondos:
-    https://videos.pexels.com/video-files/5818973/5818973-uhd_3840_2160_24fps.mp4
-    https://videos.pexels.com/video-files/15289793/15289793-hd_1920_1080_60fps.mp4
+fondos i fotos stock: https://www.pexels.com/es-es/
     
 
 Llista de funcions
